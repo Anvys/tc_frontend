@@ -1,0 +1,51 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "declaration": true,
+        "skipLibCheck": true,
+
+        "lib": [
+            "DOM",
+            "ES2021.String"
+        ],
+
+        "outDir": "./dist/",
+        "module": "ESNext",
+
+        "noImplicitAny": true,
+
+        "target": "es5",
+        "jsx": "react-jsx",
+
+        "allowJs": true,
+        "moduleResolution": "node",
+
+
+        "baseUrl": ".",
+        "paths": {
+            "*": ["./src/*"],
+            "src/*": ["src/*"],
+            "@public/*": ["public/*"],
+            //      "entities/*": ["src/entities/*"],
+            "@entities/*": ["entities/*"],
+            "@shared/*": ["shared/*"]
+        },
+
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "isolatedModules": true
+    },
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
+    },
+    "include": [
+        "./config/jest/setupTests.ts",
+        "./src/**/*.ts",
+        "./src/**/*.tsx"
+    ],
+    "exclude": [
+        "./src/**/*.stories.*"
+    ]
+}

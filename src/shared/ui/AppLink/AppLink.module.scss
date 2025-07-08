@@ -1,0 +1,13 @@
+.AppLink {
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+}
+
+.primary {
+    color: var(--primary-color);
+}
+
+.secondary {
+    color: var(--primary-color-inverted);
+}

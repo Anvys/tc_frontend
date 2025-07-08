@@ -1,0 +1,29 @@
+.FieldInput {
+    width: 100%;
+    display: flex;
+    gap: 40px;
+}
+
+.label {
+    width: 30%;
+    //max-width: 30%;
+    //min-width: 30%;
+}
+
+.fieldBlock {
+    // width: 70%;
+    display: flex;
+    flex-grow: 1;
+    gap: 10px;
+}
+
+.input {
+    width: 100%;
+}
+
+// MODS
+.error {
+    color: var(--error-color-title);
+    text-underline-offset: 6px;
+    text-decoration: solid underline var(--error-color-title) 4px;
+}

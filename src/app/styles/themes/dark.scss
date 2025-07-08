@@ -1,0 +1,47 @@
+.dark {
+        /* Основные фоны */
+        --bg-color: #1a1a2e;             /* Тёмно-синий фон */
+        --bg-color-primary: #16213e;      /* Ещё темнее */
+        --bg-color-secondary: #1e3a8a;    /* Тёмно-синий */
+        --bg-color-inverted: #7b68ee;     /* Инвертированный (SlateBlue) */
+        --bg-color-inverted-secondary: #9370db;
+
+        /* Текст и акценты */
+        --inverted-bg-color: #e0e0e0;     /* Светлый текст */
+        --primary-color: #4cc9f0;         /* Яркий голубой */
+        --secondary-color: #4895ef;       /* Мягкий синий */
+        --inverted-primary-color: #a7c957; /* Салатовый */
+        --inverted-secondary-color: #6a994e;
+
+        /* Границы */
+        --border-color: #3a3a4e;
+        --border-color-pressed: #4e4e6e;
+
+        /* Скелетоны */
+        --skeleton-color: #2d2d3a;
+        --skeleton-shadow: rgba(255, 255, 255, 0.1);
+
+        /* Подсветка */
+        --highlight-background: #b5179e;   /* Яркий пурпурный */
+        --highlight-foreground: #f72585;  /* Розовый */
+
+        /* Карточки */
+        --card-bg: #16213e;
+        --listbox-bg: #1e3a8a;
+
+        /* Код */
+        --code-bg: #0f172a;
+
+        /* Оверлей */
+        --overlay-color: rgba(0, 0, 0, 0.5);
+
+        /* Ошибки */
+        --red-light: #ef233c;
+        --red-dark: #d90429;
+
+        /* Фокус и выделение */
+        --focus-ring-color: #4361ee;
+        --selected-color: #4cc9f0;
+        --selected-color-pressed: #4895ef;
+        --checkmark-color: var(--primary-color);
+}

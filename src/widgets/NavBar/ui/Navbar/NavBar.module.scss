@@ -1,0 +1,35 @@
+.NavBar {
+    height: var(--navbar-height);
+    background-color: var(--bg-color-inverted);
+    color: var(--primary-color-inverted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px;
+    width: 100%;
+}
+
+.filler {
+    width: 70px;
+}
+
+.serverActions {
+    display: flex;
+    gap: 10px;
+}
+.modalBtns{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.links {
+    font: var(--font-l);
+    color: var(--secondary-color);
+    display: flex;
+    gap: 8px;
+}
+
+.accountControl {
+    display: flex;
+    gap: 4px;
+}

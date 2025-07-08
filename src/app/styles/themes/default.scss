@@ -1,0 +1,49 @@
+:root {
+        /* Основные фоны */
+        --bg-color: #d5ecef;              /* Светло-серый фон */
+        --bg-color-primary: #ffffff;      /* Белый для основного контента */
+        --bg-color-secondary: #a7a7aa;    /* Светло-лавандовый (вторичный фон) */
+        --bg-color-inverted: #eac03c;     /* Акцентный инвертированный (SlateBlue) */
+        --bg-color-inverted-secondary: #bfa84e; /* Более светлый инвертированный */
+
+        /* Текст и акценты */
+        --inverted-bg-color: #2d2d3a;     /* Тёмный для текста */
+        --primary-color: #0b0b0b;         /* RoyalBlue (акцент) */
+        --secondary-color: #bfa84e;       /* Более мягкий синий */
+        --inverted-primary-color: #ffffff; /* LimeGreen (светлый акцент) */
+        --inverted-secondary-color: #f0f0ff; /* ForestGreen */
+
+        /* Границы */
+        --border-color: #d3d3d3;          /* LightGray */
+        --border-color-pressed: #a9a9a9;  /* DarkGray при нажатии */
+
+        /* Скелетоны (загрузка) */
+        --skeleton-color: #e0e0e0;
+        --skeleton-shadow: rgba(0, 0, 0, 0.1);
+
+        /* Подсветка (например, выделение кода) */
+        --highlight-background: #9370db;  /* MediumPurple */
+        --highlight-foreground: #e6e6fa;  /* Lavender */
+
+        /* Карточки */
+        --card-bg: #ffffff;
+        --listbox-bg: #ffffff;
+
+        /* Код */
+        --code-bg: #f8f8f8;
+
+        /* Оверлей (модалки) */
+        --overlay-color: rgba(0, 0, 0, 0.15);
+
+        /* Ошибки */
+        --red-light: #ff6b6b;
+        --red-dark: #ff5252;
+
+        /* Фокус и выделение */
+        --focus-ring-color: #6495ed;      /* CornflowerBlue */
+        --selected-color: #50c878;        /* Emerald */
+        --selected-color-pressed: #40bf6a;
+        --checkmark-color: var(--primary-color);
+}
+
+

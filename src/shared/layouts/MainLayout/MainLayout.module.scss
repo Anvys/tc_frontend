@@ -1,0 +1,27 @@
+.MainLayout{
+    height: 100vh;
+}
+
+.header{
+    display: flex;
+    height: var(--navbar-height);
+    width: 100%;
+}
+.sidebar{
+    width: fit-content;
+    //background-color: #00C8FF;
+    height: calc(100vh - var(--navbar-height));
+}
+.content{
+    display: flex;
+    //flex-grow: 1;
+    width: 100%;
+    //background-color: #777878;
+    height: calc(100vh - var(--navbar-height));
+    overflow-x: hidden;
+}
+.rightbar{
+    width: 100px;
+    //background-color: #035668;
+    height: calc(100vh - var(--navbar-height));
+}

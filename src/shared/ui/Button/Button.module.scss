@@ -1,0 +1,158 @@
+.Button {
+    cursor: pointer;
+    padding: 4px 10px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    width: fit-content;
+    white-space: nowrap;
+    color: var(--primary-color);
+
+    &:hover {
+        opacity: 0.9;
+    }
+
+    &:disabled {
+        opacity: 0.4;
+    }
+
+    &:active {
+        border: 1px solid var(--primary-color);
+        opacity: 0.7;
+    }
+}
+
+/**
+
+ */
+
+.clear {
+    outline: none;
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+.outline {
+    background-color: transparent;
+    border: 1px solid var(--bg-color-secondary);
+    color: var(--primary-color);
+}
+
+.primary {
+    color: var(--secondary-color);
+    background-color: var(--bg-color-secondary-inverted);
+}
+
+.secondary {
+    color: var(--secondary-color-inverted);
+    border-color: var(--border-color-primary-inverted);
+    background-color: var(--bg-color-primary);
+}
+
+.danger {
+    color: var(--secondary-color);
+    background-color: var(--danger-color);
+
+    &:disabled {
+        color: var(--primary-color);
+    }
+}
+
+ .collapser {
+     position: absolute;
+     right: -20px;
+     top: calc(50vh - var(--navbar-height));
+     width: 14px;
+     height: 30px;
+     cursor: pointer;
+     outline: none;
+     background: var(--bg-color-secondary);
+     border: 0;
+     border-radius: 0 7px 7px 0;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+
+     &:hover {
+         box-shadow: none;
+     }
+
+     &:active {
+         box-shadow: none;
+     }
+ }
+
+.login {
+    color: var(--primary-color);
+    background-color: var(--bg-color-secondary-inverted);
+    padding: 12px;
+}
+
+.tab {
+    height: 30px;
+    padding: 4px 10px;
+}
+
+.size_s {
+    font: var(--font-s);
+    padding: 2px 6px;
+}
+
+.size_m {
+    font: var(--font-m);
+}
+
+.size_l {
+    font: var(--font-l);
+}
+
+.size_xl {
+    font: var(--font-xl);
+}
+
+.disabled {
+    opacity: 0.5;
+}
+
+/**
+   Моды
+ */
+.warning {
+    // background-color: var(--warning-light-color);
+    // color: var(--primary-color);
+    animation: warning 2s infinite ease-in-out;
+    border: 1px solid var(--border-color-primary);
+}
+
+.grow {
+    width: 100%;
+}
+
+.right {
+    margin-left: auto;
+}
+
+/**
+    ANIM
+     */
+@keyframes warning {
+    0% {
+        background-color: var(--warning-color);
+
+        // color: var(--primary-color);
+    }
+
+    50% {
+        background-color: initial;
+
+        // background-color: var(--secondary-color-inverted);
+
+        // color: inherit
+    }
+
+    100% {
+        background-color: var(--warning-color);
+
+        // color: var(--primary-color);
+    }
+}

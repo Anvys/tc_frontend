@@ -1,0 +1,14 @@
+.ThemeSwitch {
+    user-select: none;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: 26px;
+    border: 1px solid black;
+    border-radius: 10px;
+    gap: 10px;
+    padding: 2px 8px;
+    cursor: pointer;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+}

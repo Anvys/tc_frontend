@@ -1,0 +1,38 @@
+.FieldSelect {
+    //width: 100%;
+    display: flex;
+    gap: 40px;
+
+    width: fit-content;
+    min-width: 320px;
+
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 4px;
+}
+
+.label {
+    width: 40%;
+}
+
+.fieldBlock {
+    // width: 70%;
+    flex-grow: 1;
+    display: flex;
+    gap: 10px;
+}
+
+.input {
+    width: 100%;
+
+    select {
+        width: 100%;
+    }
+}
+
+// MODS
+.error {
+    color: var(--error-color-title);
+    text-underline-offset: 6px;
+    text-decoration: solid underline var(--error-color-title) 4px;
+}

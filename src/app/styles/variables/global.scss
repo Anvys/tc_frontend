@@ -1,0 +1,47 @@
+:root {
+    --font-family-main: "Roboto", "Times New Roman", sans-serif;
+
+    // s
+    --font-size-s: 12px;
+    --font-line-s: 20px;
+    --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
+
+    // m
+    --font-size-m: 16px;
+    --font-line-m: 24px;
+    --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
+
+    // l
+    --font-size-l: 24px;
+    --font-line-l: 32px;
+    --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+
+    // xl
+    --font-size-xl: 32px;
+    --font-line-xl: 40px;
+    --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
+
+
+
+
+    // Размеры
+    --navbar-height: 50px;
+    --sidebar-width: 300px;
+    --sidebar-max-width: 300px;
+    --content-max-width: calc(100vw - var(--sidebar-max-width));
+    --sidebar-width-collapsed: 80px;
+
+    // z - Индексы
+    --modal-z-index: 1000;
+    --overlay-z-index: 100;
+
+    --z-index-climate-layout:1;
+    --z-index-1-layout:1;
+    --z-index-2-layout:2;
+    --z-index-3-layout:3;
+    --z-index-4-layout:4;
+    --z-index-5-layout:5;
+    --z-index-event-layout:6;
+
+
+}

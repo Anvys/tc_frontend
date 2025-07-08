@@ -1,0 +1,72 @@
+.Text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: inherit;
+}
+
+.title {
+    font: var(--font-l);
+    color: var(--primary-color);
+}
+
+.text {
+    font: var(--font-m);
+    color: var(--primary-color);
+    white-space: pre-wrap;
+}
+
+.sidebarGroup {
+    // cursor: pointer;
+
+    .title {
+        font-size: 18px;
+    }
+}
+
+.error {
+    .title {
+        color: var(--error-color-title);
+    }
+
+    .text {
+        color: var(--error-color-text);
+    }
+}
+
+.left {
+    align-items: flex-start;
+}
+
+.center {
+    align-items: center;
+}
+
+.right {
+    align-items: flex-end;
+}
+
+// Themes
+.textonly {
+    color: var(--primary-color);
+}
+
+.sidebarHeader {
+    height: 3rem;
+    width: 100%;
+    background-color: var(--bg-color-secondary-inverted);
+
+    .title {
+        color: var(--secondary-color);
+    }
+}
+
+.inverted {
+    .title {
+        color: var(--secondary-color-inverted);
+    }
+
+    .text {
+        color: var(--primary-color-inverted);
+    }
+}
