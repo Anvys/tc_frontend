@@ -1,0 +1,6 @@
+/node_modules/
+.idea
+temp
+yarn.lock
+yarn-error.log
+.env
