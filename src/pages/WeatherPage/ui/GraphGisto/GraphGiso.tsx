@@ -1,12 +1,13 @@
-import { FC, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { cn } from 'shared/lib/classNames/classNames';
 import Plot from 'react-plotly.js';
 import { IWeatherResponse } from 'entities/Weather/model/types/types';
 import { Card } from 'shared/ui/Card';
+import { Spinner } from 'shared/ui/Spinner';
 import cls from './GraphGiso.module.scss';
 
 interface IGraphGisoProps {
-    weatherData: IWeatherResponse,
+    weatherData?: IWeatherResponse,
     unit: string,
     days: number
     color? : string,
@@ -27,6 +28,10 @@ export const GraphGiso: FC<IGraphGisoProps> = (props) => {
     } = props;
 
     const [binSize, setBinSize] = useState<number>(() => 1);
+
+    if (!weatherData) {
+        return <Card className={cn(cls.GraphGiso, {}, [className])}><Spinner /></Card>;
+    }
 
     // Фильтрация данных по датам
     const filterDataByDateRange = (data: IWeatherResponse) => data.list.slice(0, days * 8); // 8 точек в день (каждые 3 часа)

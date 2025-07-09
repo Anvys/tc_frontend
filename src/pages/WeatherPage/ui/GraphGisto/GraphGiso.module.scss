@@ -1,6 +1,9 @@
 .GraphGiso{
     width: fit-content;
     height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .configGroup{
     display: flex;

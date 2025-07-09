@@ -28,15 +28,19 @@ export const loginFormSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(authMe.pending, (state) => {
-                // state.error = undefined;
+                state.error = '';
                 state.isLoading = true;
+                // console.log('thunk1');
             })
             .addCase(authMe.fulfilled, (state) => {
                 state.isLoading = false;
+                state.error = '';
+                // console.log('thunk2');
             })
             .addCase(authMe.rejected, (state, action) => {
                 state.isLoading = false;
-                // state.error = action.payload as string;
+                state.error = action.payload as string;
+                // console.log('thunk', action);
             });
     },
 });

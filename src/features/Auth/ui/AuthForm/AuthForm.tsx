@@ -10,6 +10,9 @@ import { userSlice } from 'entities/User';
 import { useAppDispatch } from 'shared/hooks/useAppDispatch';
 import { doMockRegister } from 'shared/lib/mockApi/mockRegister';
 import { FocusableElement } from '@react-types/shared';
+import { useSelector } from 'react-redux';
+import { IStateSchema } from 'app/providers/StoreProvider';
+import { TextM } from 'shared/ui/Text';
 import cls from './AuthForm.module.scss';
 import { authMe } from '../../model/services/authMe/authMe';
 
@@ -24,9 +27,15 @@ export const AuthForm: FC<IAuthFormProps> = (props) => {
     const [password, setPassword] = useState<string>(() => (__IS_DEV__ ? 'admin' : ''));
 
     const dispatch = useAppDispatch();
+    const error = useSelector((state: IStateSchema) => state.loginForm?.error || '');
 
     const doHandleRegister = async (e: MouseEvent<FocusableElement>) => {
         e.preventDefault();
+
+        if (username.length === 0 || password.length === 0) {
+            window.alert('Заполните все поля');
+            return;
+        }
         // console.log('register');
 
         const result = doMockRegister({ username, password });
@@ -50,6 +59,7 @@ export const AuthForm: FC<IAuthFormProps> = (props) => {
             dispatch(userSlice.actions.setAuthData({ username, session_id: result.payload }));
         }
     };
+    console.log(error);
 
     return (
         <Form onSubmit={doHandleLogin} className={cn(cls.AuthForm, {}, [className])}>
@@ -60,6 +70,7 @@ export const AuthForm: FC<IAuthFormProps> = (props) => {
                     <Button type="button" onClick={doHandleRegister}>Регистрация</Button>
                     <Button type="submit">Войти</Button>
                 </HBlock>
+                {error && <TextM text={error} /> }
             </VBlock>
         </Form>
     );
