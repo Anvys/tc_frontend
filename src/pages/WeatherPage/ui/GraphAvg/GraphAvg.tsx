@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { cn } from 'shared/lib/classNames/classNames';
 import { IWeatherResponse } from 'entities/Weather/model/types/types';
 import { format } from 'date-fns';
@@ -6,10 +6,11 @@ import { ru } from 'date-fns/locale';
 import Plot from 'react-plotly.js';
 import { Data } from 'plotly.js';
 import { Card } from 'shared/ui/Card';
+import { Spinner } from 'shared/ui/Spinner';
 import cls from './GraphAvg.module.scss';
 
 interface IGraphAvgProps {
-    weatherData: IWeatherResponse,
+    weatherData?: IWeatherResponse,
     days: number,
     unit?: string,
     title?: string,
@@ -35,6 +36,14 @@ export const GraphAvg: FC<IGraphAvgProps> = (props) => {
     } = props;
 
     const [wndSize, setWndSize] = useState<number>(() => 3);
+
+    if (!weatherData) {
+        return (
+            <Card className={cn(cls.GraphAvg, {}, [className])}>
+                <Spinner />
+            </Card>
+        );
+    }
 
     // Фильтрация данных по датам
     const filterDataByDateRange = (data: IWeatherResponse) => data.list.slice(0, days * 8);

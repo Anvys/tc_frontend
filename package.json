@@ -5,7 +5,7 @@
   "repository": "https://github.com/Anvys/tc_frontend.git",
   "author": "Anvys <houk05@yandex.ru>",
   "license": "MIT",
-  "homepage": ".",
+  "homepage": "https://anvys.github.io/tc_frontend/",
   "scripts": {
     "start:dev:app": "webpack serve --env mode=development",
     "start:dev:jsonserver": "node ./json-server/index.js",

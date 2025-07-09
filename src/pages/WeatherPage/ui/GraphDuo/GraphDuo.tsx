@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { cn } from 'shared/lib/classNames/classNames';
 import { IWeatherResponse } from 'entities/Weather/model/types/types';
 import { format } from 'date-fns';
@@ -6,13 +6,14 @@ import { ru } from 'date-fns/locale';
 import Plot from 'react-plotly.js';
 import { Data } from 'plotly.js';
 import { Card } from 'shared/ui/Card';
+import { Spinner } from 'shared/ui/Spinner';
 import cls from './GraphDuo.module.scss';
 
 const temperatureColor = 'rgb(255, 99, 132)';
 const humidityColor = 'rgb(54, 162, 235)';
 
 interface IGraphDuoProps {
-    weatherData: IWeatherResponse,
+    weatherData?: IWeatherResponse,
     unit?: string,
     title?: string,
     days?: number
@@ -29,6 +30,10 @@ export const GraphDuo: FC<IGraphDuoProps> = (props) => {
         title = 'Температура и влажность',
         days = 5,
     } = props;
+
+    if (!weatherData) {
+        return <Card className={cn(cls.GraphDuo, {}, [className])}><Spinner /></Card>;
+    }
 
     // Фильтрация данных по датам
     const filterDataByDateRange = (data: IWeatherResponse) => data.list.slice(0, days * 8);

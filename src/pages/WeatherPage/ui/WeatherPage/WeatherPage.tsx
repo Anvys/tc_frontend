@@ -49,9 +49,9 @@ export const WeatherDashboard = () => {
         fetchWeatherData();
     }, [unit]);
 
-    if (loading) {
-        return <Page><Spinner className={cls.spinner} /></Page>;
-    }
+    // if (loading) {
+    //     return <Page><Spinner className={cls.spinner} /></Page>;
+    // }
 
     return (
         <Page>
@@ -78,39 +78,35 @@ export const WeatherDashboard = () => {
 
             </div>
 
-            {weatherData?.forecast && preparedWeatherData && (
-                <div className={cls.plots}>
-                    <GraphLinear
-                        weatherData={weatherData?.forecast}
-                        unit={unit}
-                        days={forecastDays}
-                        className={cls.Plot}
-                    />
-                    <GraphGiso
-                        weatherData={weatherData?.forecast}
-                        unit={unit}
-                        days={forecastDays}
-                        className={cls.Plot}
-                    />
-                    {weatherData?.forecast && (
-                        <GraphAvg
-                            weatherData={weatherData?.forecast}
-                            unit={unit}
-                            days={forecastDays}
-                            className={cls.Plot}
-                        />
-                    )}
-                    {weatherData?.forecast && (
-                        <GraphDuo
-                            weatherData={weatherData?.forecast}
-                            unit={unit}
-                            days={forecastDays}
-                            className={cls.Plot}
-                        />
-                    )}
+            {/* {weatherData?.forecast && preparedWeatherData && ( */}
+            <div className={cls.plots}>
+                <GraphLinear
+                    weatherData={weatherData?.forecast}
+                    unit={unit}
+                    days={forecastDays}
+                    className={cls.Plot}
+                />
+                <GraphGiso
+                    weatherData={weatherData?.forecast}
+                    unit={unit}
+                    days={forecastDays}
+                    className={cls.Plot}
+                />
+                <GraphAvg
+                    weatherData={weatherData?.forecast}
+                    unit={unit}
+                    days={forecastDays}
+                    className={cls.Plot}
+                />
+                <GraphDuo
+                    weatherData={weatherData?.forecast}
+                    unit={unit}
+                    days={forecastDays}
+                    className={cls.Plot}
+                />
 
-                </div>
-            )}
+            </div>
+            {/* )} */}
         </Page>
     );
 };

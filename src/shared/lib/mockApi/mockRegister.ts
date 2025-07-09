@@ -22,6 +22,7 @@ export const doMockRegister = (payload: IAuthMeInput): null | IDBUser => {
         localStorage.setItem(lsMockAuthKey, JSON.stringify(currentDataBase));
         return currentDataBase[payload.username];
     }
+    window.alert('Имя пользователя занято');
 
     return null;
 };

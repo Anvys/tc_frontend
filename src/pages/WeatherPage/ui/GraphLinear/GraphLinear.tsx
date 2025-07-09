@@ -8,11 +8,12 @@ import { TextM } from 'shared/ui/Text';
 import { Card } from 'shared/ui/Card';
 import { cn } from 'shared/lib/classNames/classNames';
 import { IWeatherResponse } from 'entities/Weather/model/types/types';
+import { Spinner } from 'shared/ui/Spinner';
 import cls from './GraphLinear.module.scss';
 
 interface IGraphLinearProps {
     className?: string
-    weatherData: IWeatherResponse
+    weatherData?: IWeatherResponse
     days: number
     unit: 'imperial' | 'metric'
     // children?: React.ReactNode
@@ -40,6 +41,10 @@ export const GraphLinear: FC<IGraphLinearProps> = (props) => {
     } = props;
 
     const [chartMode, setChartMode] = useState<string>(() => 'lines');
+
+    if (!data) {
+        return <Card className={cn(cls.GraphLinear, {}, [className])}><Spinner /></Card>;
+    }
 
     const preparedWeatherData = doPrepareChartData(data, days);
 
