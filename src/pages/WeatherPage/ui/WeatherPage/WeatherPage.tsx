@@ -10,6 +10,7 @@ import { GraphDuo } from 'pages/WeatherPage/ui/GraphDuo/GraphDuo';
 import { TextM } from 'shared/ui/Text';
 import { FieldSelect } from 'shared/ui/FieldSelect';
 import { Spinner } from 'shared/ui/Spinner';
+import axios from 'axios';
 import cls from './WeatherPage.module.scss';
 import { dayList, unitList } from '../../const/optionsList';
 
@@ -32,17 +33,30 @@ export const WeatherDashboard = () => {
             try {
                 setLoading(true);
 
-                setTimeout(
-                    () => {
+                axios.get(
+                    `${__OPENWEATHERAPI__}?q=Moscow&units=${unit}&appid=${__OPENWEATHERAPIKEY__}`,
+                ).then((r) => {
+                    setWeatherData({ // @ts-ignore
+                        forecast: r.data,
+                    });
+                })
+                    .catch((r) => {
                         setWeatherData({ // @ts-ignore
                             forecast: mockWeatherData,
                         });
-                        setLoading(false);
-                    },
-                    1500,
-                );
+                    });
+
+                // setTimeout(
+                //     () => {
+                //         setWeatherData({ // @ts-ignore
+                //             forecast: mockWeatherData,
+                //         });
+                //         setLoading(false);
+                //     },
+                //     1500,
+                // );
             } finally {
-                // setLoading(false);
+                setLoading(false);
             }
         };
 

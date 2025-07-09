@@ -23,6 +23,10 @@ export const buildPlugins = (options: TBuildOptions): Configuration['plugins'] =
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
             __API__: JSON.stringify(apiUrl),
+
+            __OPENWEATHERAPI__: JSON.stringify('https://api.openweathermap.org/data/2.5/forecast'),
+            // Ключ по хорошему надо получать с бэка после авторизации, но т.к. у нас моковая, то вынесу его сюда
+            __OPENWEATHERAPIKEY__: JSON.stringify('4a3e4656f4751ed2578c09eaf928f073'),
         }),
 
         new CircularDependencyPlugin({

@@ -59,7 +59,6 @@ export const AuthForm: FC<IAuthFormProps> = (props) => {
             dispatch(userSlice.actions.setAuthData({ username, session_id: result.payload }));
         }
     };
-    console.log(error);
 
     return (
         <Form onSubmit={doHandleLogin} className={cn(cls.AuthForm, {}, [className])}>
